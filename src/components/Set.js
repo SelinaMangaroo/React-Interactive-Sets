@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-
+import Card from "react-bootstrap/Card";
+import "bootstrap/dist/css/bootstrap.css";
 import Button from "react-bootstrap/Button";
 
 import "../App.css";
@@ -18,51 +12,39 @@ class Set extends Component {
   }
 
   render() {
-    console.log("data in set: " + this.props.currentSet);
     return (
       <div>
-        <Grid container spacing={2}>
-          {this.props.currentSet.map((item) => {
-            return (
-              <Grid item xs={4}>
-                <div className="card-container">
-                  <Card variant="outlined">
-                    <CardMedia>
+        <div className="container-fluid">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
+            {this.props.currentSet.map((item) => {
+              return (
+                <div class="col mb-4">
+                  <div className="card-container">
+                    <Card>
                       <div
-                        className="image"
-                        dangerouslySetInnerHTML={{
-                          __html: item.media_tag,
-                        }}
+                        className="img"
+                        dangerouslySetInnerHTML={{ __html: item.media_tag }}
                       />
-                    </CardMedia>
-                    <CardContent>
-                      <Typography
-                        align="left"
-                        display="inline"
-                        variant="caption"
-                      >
-                        <div
-                          className="caption"
-                          dangerouslySetInnerHTML={{
-                            __html: item.caption,
-                          }}
-                        />
-                      </Typography>
-                    </CardContent>
-                    <Divider />
-                    <CardActions>
-                      <Button variant="outline-primary" size="sm">
-                        <a className="url" href={item.url} rel="noopener">
-                          URL
-                        </a>
-                      </Button>
-                    </CardActions>
-                  </Card>
+                      <Card.Body>
+                        <Card.Text>
+                          <div
+                            className="caption"
+                            dangerouslySetInnerHTML={{ __html: item.caption }}
+                          />
+                        </Card.Text>
+                        <Button variant="outline-primary" size="sm">
+                          <a className="url" href={item.url} rel="noopener">
+                            URL
+                          </a>
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
                 </div>
-              </Grid>
-            );
-          })}
-        </Grid>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }

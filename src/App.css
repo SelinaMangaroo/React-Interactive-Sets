@@ -6,6 +6,12 @@
   padding: 20px;
 }
 
+.card-container {
+  max-width: 350px;
+  max-height: 400px;
+  box-shadow: 1px 1px 1px rgba(158, 158, 158, 0.9);
+}
+
 img {
   width: 100%;
   max-height: 200px;
@@ -16,10 +22,8 @@ a {
   text-decoration: none;
 }
 
-.card-container {
-  max-width: 350px;
-  max-height: 400px;
-  box-shadow: 1px 1px 1px rgba(158, 158, 158, 0.9);
+.url:hover {
+  color: white;
 }
 
 .caption {
@@ -32,9 +36,4 @@ a {
 .caption a:hover {
   white-space: normal;
   word-break: break-all;
-}
-
-.root {
-  max-width: 350;
-  box-shadow: "1px 1px 1px #9E9E9E";
 }

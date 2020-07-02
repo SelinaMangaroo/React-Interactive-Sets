@@ -23,7 +23,7 @@ class App extends Component {
   };
 
   setCurrentSet = (clickedSet) => {
-    const { key, set, items } = clickedSet;
+    const { set, items } = clickedSet;
     this.setState({
       currentSet: items,
       currentSetName: set,
@@ -57,14 +57,16 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="row">
-            <div className="col-sm-3">
+            <div className="col-sm-2">
               <div>
-                <Button onClick={this.showSetListHandler}>Show Set List</Button>
+                <Button onClick={this.showSetListHandler} size="sm">
+                  Show Set List
+                </Button>
                 {setList}
               </div>
             </div>
 
-            <div className="col-sm-9">
+            <div className="col-sm-10">
               {this.state.showSetList === false ? (
                 <div>
                   <FrontPage />
