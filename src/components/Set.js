@@ -15,10 +15,10 @@ class Set extends Component {
     return (
       <div>
         <div className="container-fluid">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
             {this.props.currentSet.map((item) => {
               return (
-                <div class="col mb-4">
+                <div className="col mb-4">
                   <div className="card-container">
                     <Card>
                       <div
