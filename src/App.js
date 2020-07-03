@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import "./App.css";
 import data from "./data";
-import "bootstrap/dist/css/bootstrap.css";
-import Button from "react-bootstrap/Button";
 import Set from "./components/Set";
 import FrontPage from "./components/FrontPage";
+
+import "bootstrap/dist/css/bootstrap.css";
+import Button from "react-bootstrap/Button";
+
+import "./App.css";
 
 class App extends Component {
   constructor() {
